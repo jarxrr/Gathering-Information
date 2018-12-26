@@ -1,0 +1,34 @@
+Prerequisites 
+
+Install python-google-places from https://github.com/slimkrazy/python-google-places 
+
+Usage
+
+Make environment variable API_KEY with your Google API key
+
+To run script in terminal you have to write:
+python3 gathinfo.py Location KeyWords OutputFile Radius
+where OutputFile and Radius are not obligatory
+
+Location -- A human readable location
+
+KeyWords  --  The text string on which to search
+
+OutputFile -- Name of output file, for example: output.csv
+
+Radius   -- The radius (in meters) around the location to restrict
+            the search to. The maximum is 50000 meters (default 2000)
+
+Returned file has delimiter='|', the values in the cells correspond to following :
+geo_location, name, place_id, types, vicinity, rating, formatted_address, local_phone_number, international_phone_number, website, url
+
+Examples:
+
+python3 gathinfo.py Warszawa Lidl
+It return Warszawa_Lidl.csv file with results from a circle with a radius of 2000 meters around Warszawa
+
+python3 gathinfo.py Warszawa Lidl nameoffile.csv
+It return nameoffile.csv file with results from a circle with a radius of 2000 meters around Warszawa
+
+python3 gathinfo.py Warszawa Lidl nameoffile.csv xxxx
+It return nameoffile.csv file with results from a circle with a radius of xxxx meters around Warszawa
